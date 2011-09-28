@@ -26,13 +26,13 @@ Build with Maven. Or just copy the source code into your own project.
 
 h2. Geckoboard Widgets and Charts covered by the API 
 
-* Custom Widgets
+* "Custom Widgets":http://support.geckoboard.com/entries/231507-custom-widget-type-definitions
 ** Map (@Mapping@)
 ** Number & Secondary Stat (@NumberAndSecondaryStat@)
 ** RAG Column & Numbers (@RAGNumbers@)
 ** RAG Numbers (@RAGNumbers@)
 ** Text (@Text@)
-* Custom Charts
+* "Custom Charts":http://support.geckoboard.com/entries/274940-custom-chart-widget-type-definitions
 ** Pie chart (@PieChart@)
 ** Line chart (@LineChart@)
 ** Geck-O-Meter (@GeckOMeter@)
