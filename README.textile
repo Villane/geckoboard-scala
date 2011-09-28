@@ -1,0 +1,40 @@
+h1. Geckoboard Scala API
+
+geckoboard-scala is a small set of case classes that make constructing the JSON output for Geckoboard easier and more type safe. It has been tested with lift-json as the JSON serializer but should be usable with other JSON libraries that support case class serialization. It is also not tied to any particular web framework. Scalatra with Lift-JSON is recommended. 
+
+h2. Suggested Usage
+
+bc.. import net.liftweb.json._
+import JsonDSL._
+
+import org.zeroturnaround.geckoboard._
+
+object MyAPI {
+  // implicitly convert all case classes to JSON
+  private implicit def product2json(obj: Product) = Extraction.decompose(obj)(DefaultFormats)
+
+  def myPieChart: JValue = {
+    val values: List[(Long, String)] = ... acquire values ...
+    PieChart(for ((value, label) <- values) yield LabelValue(value, label, colour = Some("ffffff")))
+  }
+
+}
+
+h2. Building
+
+Build with Maven. Or just copy the source code into your own project.
+
+h2. Geckoboard Widgets and Charts covered by the API 
+
+* Custom Widgets
+** Map (@Mapping@)
+** Number & Secondary Stat (@NumberAndSecondaryStat@)
+** RAG Column & Numbers (@RAGNumbers@)
+** RAG Numbers (@RAGNumbers@)
+** Text (@Text@)
+* Custom Charts
+** Pie chart (@PieChart@)
+** Line chart (@LineChart@)
+** Geck-O-Meter (@GeckOMeter@)
+** Funnel chart (@Funnel@)
+** Other charts might be added later
